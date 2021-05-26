@@ -1,9 +1,81 @@
 {% extends 'layout.html' %}
 {% block ourpage %}
 
-<h1>
-	{% for i in result %} {{ i }} {% endfor %}
-</h1>
+<head>
+	<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+	<title>Report</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<style>
+			.col-md-4
+			{
+				padding:2px;
+			}
+	</style>
+</head>
+<body>
+<br><br><br><br><br>
+<center>
+	<div class="container">
+			<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<div class="col-md-4">Covid Report</div>
+					<div class="col-md-4" id="date"></div>
+					
+					
+				</div>
+				<div class="card-body">
+					<div class="col-md-4">Name: {{result[0]+' '+result[1]}}</div>
+					<br>
+					<div class="col-md-4">Age: {{result[2]}}</div>
+					<br>
+					<div class="col-md-4">Gender: {{result[3]}}</div>
+					<br>
+					<div class="col-md-4">Location: {{result[6]+','+result[5]+','+result[4]}}</div>
+					<br>
+					{% if len==7 %}
+						<div>Test Result: {{result[len]}}</div>
+					{% else %}
+					<p>
+						Health Conditions: 
+						{% for i in range(7,len) %} {{ result[i] }} {% if i<len-1 %},{% endif %}
+						{% endfor %}
+					</p>
+					<div class="col-md-4">Test Result: {{result[len]}}</div>
 
+					{% endif %}
+			
+
+				</div> 
+				<div class="card-footer">
+					<p class="pull pull-right">Thank you.</p>
+					<!-- <p>jsgs</p> -->
+					&nbsp;&nbsp; 
+				&nbsp;&nbsp; 
+				<input type="submit" class="btn btn-primary" onclick="myFunction()" value="Print Report" />
+					
+				</div>
+			</div>
+			</div>
+	</div>
+</center>
+
+<script>
+	var d = new Date();
+	var day = d.getDate();
+	var month = d.getMonth()+1;
+	var year = d.getFullYear();
+
+	document.getElementById("date").innerHTML ='Date: '+day+'/'+month+'/'+year;
+	console.log(day+'/'+month+'/'+year);
+
+function myFunction() {
+window.print();
+}
+</script>
+</body>
 
 {% endblock %}

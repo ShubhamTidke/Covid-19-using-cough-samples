@@ -1,9 +1,9 @@
+import re
 from flask import Flask, request, render_template, redirect, url_for
 from app import app, APP_ROOT
 
 from app.process import prognosis
-
-import os
+# import os
 
 
 @app.route("/", methods=['POST', 'GET'])
@@ -20,12 +20,24 @@ def index():
 
 @app.route("/predict", methods=["GET", "POST"])
 def predict():
+
+    # fname = request.form['First']
+    # lname = request.form['last']
+    # age = request.form['age']
+   # country = request.form['inputCountry']
+    # gender = request.form['inputGender']
+   # print(age)
+
+   # print(country)
+
     features = []
     for key in request.form:
         features.append(request.form[key])
+    
+    # print(len(features))
+
     x = prognosis('audio.wav', features)
-    # print(x)
-    return render_template("output.html", result=x)
+    return render_template("output.html", result=x, len = len(features))
 
 
 if __name__ == "__main__":

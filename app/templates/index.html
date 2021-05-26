@@ -26,35 +26,113 @@
       <br />
   
       <!--  Row  -->
+      <!-- <h2>Personal Info</h2> -->
+      <label for="newsletter">Personal Info</label>
+
       <div class="row">
         <!--  Col 1   -->
         <div class="col-md-6">
           <div class="form-group">
-            <label for="first">First Name</label>
+            <!-- <label for="first">First Name</label> -->
             <input
               type="text"
               class="form-control"
-              placeholder=""
+              placeholder="First Name *"
               name="First"
+              required
             />
           </div>
         </div>
         <!--  Col 2   -->
         <div class="col-md-6">
           <div class="form-group">
-            <label for="last">Last Name</label>
+            <!-- <label for="last">Last Name</label> -->
             <input
               type="text"
               class="form-control"
-              placeholder=""
+              placeholder="Last Name *"
               name="last"
+              required
             />
           </div>
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <!-- <label for="age">Age</label> -->
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Age *"
+              name="age"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <!-- <label for="gender">Gender *</label> -->
+            <select id="inputGender" class="form-control" name="inputGender">
+              <option value="" selected disabled>Gender *</option>
+              <option >Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br>
+      <label for="newsletter">Locality</label>
+
+      <!-- <h2>Locality</h2> -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <select id="inputCountry" class="form-control" name="inputCountry">
+              <option selected>India</option>
+              <option>United States</option>
+              <option>Italy</option>
+              <option>Norway</option>
+              <option>...</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="inputState">State/Province *</label>
+
+            <!-- <label for="age">Age</label> -->
+            <select id="inputState" class="form-control" name="inputState">
+              <option selected>Aasam</option>
+              <option>Mahrashtra</option>
+              <option>Rajasthan</option>
+              <option>Uttar Pradesh</option>
+              <option>...</option>
+            </select>
+          </div>
+        </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="District">District/Taluka *</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="e.g. Pune "
+                name="District"
+              />
+            </div>
+        </div>
+        </div>
+
+
+      <br>
       <!--  Row   -->
-      <label for="newsletter">Other health conditions</label>
+      <label for="newsletter">Other Health Conditions</label>
+      <!-- <h2>Other Health Conditions</h2> -->
+
       <div class="checkbox">
         <label>
           <input type="checkbox" value="Fever" name="Fever" /> Fever
@@ -64,15 +142,23 @@
           Lack of taste
         </label>
         <label>
+          <input type="checkbox" value="Cold" name="Cold" /> Cold
+        </label>
+        <label>
           <input type="checkbox" value="Diabetes" name="Diabetes" /> Diabetes
         </label>
         <label>
           <input type="checkbox" value="Asthama" name="Asthama" /> Asthama
         </label>
+        <!-- <label>
+          <input type="checkbox" value="mp" name="mp" /> Muscle Pain
+        </label> -->
       </div>
 
+      <br>
       <!-- Record sound -->
       <label for="newsletter">Record voice sample</label>
+      <!-- <h2>Record voice sample</h2> -->
       <div id="controls">
         <button id="recordButton">Record</button>
         <button id="pauseButton" disabled>Pause</button>
@@ -82,7 +168,7 @@
       <p><strong>Recordings:</strong></p>
       <ol id="recordingsList"></ol>
       
-      <button type="submit" class="btn btn-primary">Submit</button>
+     <center> <button type="submit" class="btn btn-primary">Submit</button></center>
     </form>
   </div>
 
