@@ -36,7 +36,7 @@ def prognosis(path, features):
     # print(featureList)
     predictions = lr.predict([featureList])
 
-    print(type(predictions.tolist()))
-    print(type(features))
+    # print(type(predictions.tolist()))
+    # print(type(features))
     
     return features + predictions.tolist()

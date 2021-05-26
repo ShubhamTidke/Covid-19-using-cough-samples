@@ -37,6 +37,8 @@ def predict():
     # print(len(features))
 
     x = prognosis('audio.wav', features)
+    # for i in range(0, len(x)):
+    #     x[i] = str(x[i])
     return render_template("output.html", result=x, len = len(features))
 
 

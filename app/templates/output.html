@@ -28,13 +28,13 @@
 					
 				</div>
 				<div class="card-body">
-					<div class="col-md-4">Name: {{result[0]+' '+result[1]}}</div>
+					<div class="col-md-4">Name: {{result[0]}} {{' '}} {{result[1]}}</div>
 					<br>
 					<div class="col-md-4">Age: {{result[2]}}</div>
 					<br>
 					<div class="col-md-4">Gender: {{result[3]}}</div>
 					<br>
-					<div class="col-md-4">Location: {{result[6]+','+result[5]+','+result[4]}}</div>
+					<div class="col-md-4">Location: {{result[6]}}{{','}}{{result[5]}}{{','}}{{result[4]}}</div>
 					<br>
 					{% if len==7 %}
 						<div>Test Result: {{result[len]}}</div>
