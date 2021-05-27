@@ -2,7 +2,6 @@ name: myenv
 channels:
   - conda-forge
 dependencies:
-  - audioread
   - flask
   - html5lib
   - librosa
