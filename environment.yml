@@ -1,0 +1,16 @@
+name: myenv
+channels:
+  - conda-forge
+dependencies:
+  - audioread
+  - flask
+  - html5lib
+  - librosa
+  - numpy
+  - numpy-base
+  - pandas
+  - pickleshare
+  - pysoundfile
+  - scikit-learn=0.22.2
+  - scipy
+  - unicodecsv
