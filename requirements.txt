@@ -1,1 +1,9 @@
-gunicorn==20.0.4
+gunicorn
+flask
+librosa
+numpy
+pandas
+pickleshare
+pysoundfile
+scikit-learn
+scipy
