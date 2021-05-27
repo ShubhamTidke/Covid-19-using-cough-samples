@@ -1,9 +1,0 @@
-gunicorn
-librosa
-scikit-learn
-numpy
-pandas
-flask
-pickleshare
-unicodecsv
-scipy
