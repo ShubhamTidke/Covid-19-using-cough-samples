@@ -1,10 +1,12 @@
 from sklearn.linear_model import LogisticRegression
+from xgboost import XGBClassifier
 import pickle
 import librosa
 import numpy as np
 import csv
 import os
 from app import APP_ROOT
+from app.normalization import normalize
 
 
 def extractFeature(path):
@@ -28,15 +30,20 @@ def extractFeature(path):
 
 
 def prognosis(path, features):
-    model_path = os.path.join(APP_ROOT, 'static/Logistic_regression.pickle')
-    with open(model_path, 'rb') as f:
-        lr = pickle.load(f)
-    
-    featureList = extractFeature(path)
-    # print(featureList)
-    predictions = lr.predict([featureList])
+    # model_path = os.path.join(APP_ROOT, 'static/Logistic_regression.pickle')
+    # with open(model_path, 'rb') as f:
+    #     model = pickle.load(f)
 
-    # print(type(predictions.tolist()))
-    # print(type(features))
+    model_path = os.path.join(APP_ROOT, 'static/xgboost.pickle')
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
+    
+    # Extract features from sound
+    featureList = extractFeature(path)
+
+    # Normalize 'featureList'
+    featureList = normalize(featureList)
+    predictions = model.predict([featureList])
+    # print(features)
     
     return features + predictions.tolist()

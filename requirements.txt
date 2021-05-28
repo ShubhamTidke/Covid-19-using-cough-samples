@@ -7,3 +7,4 @@ pickleshare
 pysoundfile
 scikit-learn
 scipy
+xgboost
